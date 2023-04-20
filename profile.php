@@ -71,13 +71,14 @@ if (!$connection) {
             margin: auto;
         }
 
-        Header {
+            Header {
             max-width: 1400px;
-            padding: 20px;
+            padding: 5px;
             background-color: teal;
             color: white;
             margin: auto;
             text-align: center;
+            font-size: 25px;
         }
 
         .btn {

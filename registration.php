@@ -68,13 +68,14 @@ if (isset($_POST["signup"])) {
 
 <head>
     <style>
-        Header {
+            Header {
             max-width: 1400px;
-            padding: 20px;
-            background-color: teal;
+             padding: 1px;
+            background-color: #0f7ccb;
             color: white;
             margin: auto;
             text-align: center;
+            font-size: 20px;
         }
 
         form {

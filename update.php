@@ -3,7 +3,7 @@ session_start();
 include "./connection.php";
 include "./error.php";
 $params = $_SERVER['QUERY_STRING'];
-echo $params;
+
 $connection = Connection();
 
 if (!$connection) {
@@ -87,11 +87,12 @@ if (isset($_POST["update"])) {
     <style>
         Header {
             max-width: 1400px;
-            padding: 20px;
-            background-color: teal;
+            padding: 1px;
+            background-color: #0f7ccb;
             color: white;
             margin: auto;
             text-align: center;
+            font-size: 20px;
         }
 
         form {
@@ -238,9 +239,15 @@ if (isset($_POST["update"])) {
              }
              ; ?>">
                 <option value="">--Please choose a city--</option>
-                <option>Indore</option>
-                <option>Ujjain</option>
-                <option>Bhopal</option>
+                <option <?php if ($city == 'Indore') {
+                    echo "selected";
+                } ?>>Indore</option>
+                <option <?php if ($city == 'Ujjain') {
+                    echo "selected";
+                } ?>>Ujjain</option>
+                <option <?php if ($city == 'Bhopal') {
+                    echo "selected";
+                } ?>>Bhopal</option>
             </select>
             <span>
                 <?php echo $cityError ?>

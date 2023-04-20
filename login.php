@@ -61,11 +61,12 @@ if (isset($_POST["login"])) {
     <style>
         Header {
             max-width: 1400px;
-            padding: 20px;
-            background-color: teal;
+            padding: 1px;
+           background-color: #0f7ccb;
             color: white;
             margin: auto;
             text-align: center;
+            font-size: 20px;
         }
 
         form {
@@ -73,7 +74,7 @@ if (isset($_POST["login"])) {
             margin: 0 auto;
 
             padding: 25px 35px;
-            margin-top: 50px;
+            margin-top: 60px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             border-radius: 16px;
             padding-bottom: 50px;
@@ -115,7 +116,7 @@ if (isset($_POST["login"])) {
             font-size: 18px;
 
         }
-
+        
         button {
             padding: 12px 25px;
             background-color: green;
@@ -151,9 +152,10 @@ if (isset($_POST["login"])) {
 
 <body>
 
-    <Header>
+  <Header>
         <h1>Login-Page</h1>
-    </Header>
+    </Header> 
+    <section class="login-section">
     <form method="post">
         <span class="err"> &nbsp;
             <?php echo $result ?>
@@ -185,4 +187,5 @@ if (isset($_POST["login"])) {
         <button type="submit" name="login">Login</button>
         <a class="btn" href="./registration.php">Create An Account</a>
     </form>
+    </section>
 </body>
