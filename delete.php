@@ -10,8 +10,6 @@ if (!$connection) {
 } else {
     $sql = $connection->prepare("DELETE  FROM registration where $params");
     $sql->execute();
-
-
     var_dump($sql);
     if ($sql) {
         header('Location: index.php');

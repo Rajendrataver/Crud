@@ -26,11 +26,12 @@ $id = $_SESSION['ID'];
 
         Header {
             max-width: 1400px;
-            padding: 20px;
-            background-color: teal;
+             padding: 1px;
+            background-color: #0f7ccb;
             color: white;
             margin: auto;
             text-align: center;
+            font-size: 20px;
         }
 
         .list-section .table-container {
@@ -56,7 +57,7 @@ $id = $_SESSION['ID'];
         table tr td,
         th {
             text-align: center;
-            border-bottom: 0.5px solid gray;
+
             padding: 15px;
         }
 
@@ -79,7 +80,7 @@ $id = $_SESSION['ID'];
         }
 
         .btn:hover {
-            background-color: #0f64cd;
+            background-color: #00479f;
         }
 
         .danger {
@@ -106,6 +107,11 @@ $id = $_SESSION['ID'];
         .readOnly {
             opacity: 0.8;
         }
+
+        .odd {
+
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
     </style>
 </head>
 
@@ -118,7 +124,8 @@ $id = $_SESSION['ID'];
     <div class="container">
         <div>
             <a href="./logout.php" class="btn"><span class="arrow">&leftarrow;</span> Logout</a>
-            <a href="./update.php?ID=<?php echo $id ?>" class="btn warning">Update<span class="arrow">&rightarrow;</span>
+            <a href="./update.php?ID=<?php echo $id ?>" class="btn warning">Update<span
+                    class="arrow">&rightarrow;</span>
             </a>
         </div>
     </div>
@@ -135,9 +142,16 @@ $id = $_SESSION['ID'];
                     <th>Action</th>
                 </tr>
                 <?php
-
+                $c = 0;
                 while ($row = $sql->fetch()) {
-                    echo "<tr>";
+                    if ($c == 1) {
+                        $class = "even";
+                        $c = 0;
+                    } else {
+                        $class = "odd";
+                        $c = 1;
+                    }
+                    echo "<tr class=$class>";
                     echo "<td>", ($row['name']), "</td>";
                     echo "<td>", ($row['email']), "</td>";
                     if ($row['gender'] == 'm') {
